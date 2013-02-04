@@ -28,6 +28,7 @@ group :test, :developement do
 end
 
 group :test do
+	gem 'factory_girl', '2.6.4'
 	gem 'capybara', '1.1.2'
 end
 

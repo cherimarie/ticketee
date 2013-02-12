@@ -2,7 +2,7 @@ require 'spec_helper'
 feature "Editing Projects" do
 
 	before do
-		 Factory(:project, :name => "Turtle Wars")
+		Factory(:project, :name => "Turtle Wars")
 	    visit "/"
 	    click_link "Turtle Wars"
 	    click_link "Edit Project"

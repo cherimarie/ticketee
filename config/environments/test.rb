@@ -34,4 +34,9 @@ Ticketee::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  # tells URL helpers which URL to use as a base for emails sent
+  config.action_mailer.default_url_options = {
+    :host => 'localhost:3000'
+  }
 end

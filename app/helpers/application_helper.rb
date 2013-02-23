@@ -8,7 +8,8 @@ module ApplicationHelper
   end
 
   def admins_only(&block)
-  	concat(block.call) if current_user.try(:admin?)
+  	yield if current_user.try(:admin?)
+    #the try method saves us from an error if there is no current user
   end
 
 end

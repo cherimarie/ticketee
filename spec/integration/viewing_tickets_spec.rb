@@ -3,7 +3,8 @@ feature "Viewing tickets" do
 
   before do
     textmate_2 = Factory(:project, :name => "TextMate 2")
-    user = Factory(:user)
+    user = Factory(:confirmed_user)
+    define_permission!(user, "view", textmate_2)
     ticket = Factory(:ticket,
                  :project => textmate_2,
                  :title   => "Make it shiny!",
@@ -14,6 +15,8 @@ feature "Viewing tickets" do
 	            :project => internet_explorer,
 	            :title => "Standards compliance",
 	            :description => "Isn't a joke.")
+  define_permission!(user, "view", internet_explorer)
+  sign_in_as!(user)
 	visit '/'
 end
 
